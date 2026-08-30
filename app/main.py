@@ -26,11 +26,11 @@ def main():
                 "type": "function",
                 "function": {
                     "name": "read",
-                    "description": "",
+                    "description": "Read and return contents of a file",
                     "parameters": {
                         "type": "object",
                         "parameters": {
-                            "file_path": {"type": "string", "description": ""}
+                            "file_path": {"type": "string", "description": "The path to the file to read"}
                         },
                         "required": ["file_path"],
                     },
