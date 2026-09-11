@@ -39,6 +39,11 @@ def main():
         ],
     )
 
+    def read(file_path: str) -> str:
+        with open(file_path) as f:
+            return f.read()
+        
+        
 
     if not chat.choices or len(chat.choices) == 0:
         raise RuntimeError("no choices in response")
@@ -50,6 +55,7 @@ def main():
     # TODO: Uncomment the following line to pass the first stage
     print(chat.choices[0].message.tool_calls)
 
+    print(read(chat.choices[0].message.tool_calls))
 
 if __name__ == "__main__":
     main()
