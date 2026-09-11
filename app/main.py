@@ -29,7 +29,7 @@ def main():
                     "description": "Read and return contents of a file",
                     "parameters": {
                         "type": "object",
-                        "parameters": {
+                        "properties": {
                             "file_path": {"type": "string", "description": "The path to the file to read"}
                         },
                         "required": ["file_path"],
@@ -39,14 +39,16 @@ def main():
         ],
     )
 
+
     if not chat.choices or len(chat.choices) == 0:
         raise RuntimeError("no choices in response")
 
     # You can use print statements as follows for debugging, they'll be visible when running tests.
     print("Logs from your program will appear here!", file=sys.stderr)
 
+    
     # TODO: Uncomment the following line to pass the first stage
-    print(chat.choices[0].message.content)
+    print(chat.choices[0].message.tool_calls)
 
 
 if __name__ == "__main__":
